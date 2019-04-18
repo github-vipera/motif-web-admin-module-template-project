@@ -1,10 +1,29 @@
-<wc-dashboard-header [title]="'Custom Module'"></wc-dashboard-header>
+<wc-dashboard-header [title]="'Users List'"></wc-dashboard-header>
 
 <div class="row spread">
+  <div class="flex-toolbar" style="display:flex;align-items: center;">
+      <div style="margin-right:10px;width:60%;max-width: 400px;min-width: 250px;">
+          <label>Domain</label>
+          <wc-domain-selector-combobox #domainSelector [(ngModel)]="selectedDomain"></wc-domain-selector-combobox>
+      </div>
 
-  <div class="toolbar-placeholder label">Place here your module Toolbar</div>
+      <div style="margin-left: 40px;margin-right:10px;width:60%;max-width: 400px;min-width: 250px;">
+          <label>Application</label>
+          <wc-application-selector-combobox #applicationSelector [domain]="(selectedDomain ? selectedDomain.name : null)" [(ngModel)]="selectedApplication"></wc-application-selector-combobox>
+      </div>
+
+
+  </div>
+
+  <div class="flex-cmd">
+      <kendo-buttongroup look="flat">
+          <button kendoButton [toggleable]="false" [icon]="'refresh'" (click)="onRefreshClicked()">Refresh</button>
+      </kendo-buttongroup>
+  </div>
 
 </div>
+
+
 
 <div class="row fill">
 
