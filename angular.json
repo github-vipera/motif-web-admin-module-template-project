@@ -58,10 +58,15 @@
               "projects/custom-module-test-app/src/assets"
             ],
             "styles": [
-              "projects/custom-module-test-app/src/styles.css"
+              "node_modules/ngx-toastr/toastr.css",
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/primeng/resources/primeng.min.css",
+              "node_modules/@progress/kendo-theme-default/scss/all.scss",
+              "node_modules/motif-web-admin-core/assets/style.css",
+              "node_modules/motif-web-admin-core/assets/motif_webadmin_iconfont.css",
+              "projects/custom-module-test-app/src/styles.scss"
             ],
-            "scripts": [],
-            "es5BrowserSupport": true
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -93,7 +98,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "custom-module-test-app:build"
+            "browserTarget": "custom-module-test-app:build",
+            "proxyConfig": "./proxy.conf.json"
           },
           "configurations": {
             "production": {
