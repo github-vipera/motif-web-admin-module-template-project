@@ -33,7 +33,8 @@ import { WAThemeDesignerService } from 'motif-web-admin-core';
 import { RESTManagerSectionModule } from 'motif-web-admin-core';
 import { SchedulerSectionModule } from 'motif-web-admin-core';
 import { MainDashboardSectionModule } from 'motif-web-admin-core';
-import { moduleRoutes } from 'motif-web-admin-core';
+//import { moduleRoutes } from 'motif-web-admin-core';
+import { moduleRoutes } from 'custom-web-admin-module';
 
 const LoggerModuleConfigured = LoggerModule.forRoot({
   level: (environment.production ? NgxLoggerLevel.OFF : NgxLoggerLevel.DEBUG),
