@@ -1,13 +1,22 @@
-<wc-dashboard-header [title]="'Custom Module'"></wc-dashboard-header>
+<wc-dashboard-header [title]="'Simple Dashboard'"></wc-dashboard-header>
 
-<div class="row spread">
-
-  <div class="toolbar-placeholder label">Place here your module Toolbar</div>
-
-</div>
 
 <div class="row fill">
 
-  <div class="content-placeholder label">Place here your module UI</div>
+  <gridster [options]="options">
+
+      <gridster-item [item]="clockItem">
+          <wc-panel [title]="'Clock'">
+              <wc-data-counter [title]="dateTime | date " [value]="dateTime | date:'h:mm.ss a' "></wc-data-counter>
+          </wc-panel>
+      </gridster-item>
+
+      <gridster-item [item]="counterItem">
+          <wc-panel [title]="'Vain Counter'">
+              <wc-data-counter [title]="'Counts'" [value]="counter"></wc-data-counter>
+          </wc-panel>
+      </gridster-item>
+
+  </gridster>
 
 </div>
