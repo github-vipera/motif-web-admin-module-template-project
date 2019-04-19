@@ -19,7 +19,7 @@ export class CustomWebAdminModuleComponent implements OnInit, OnDestroy {
 
   // Gridster configuration
   options: Gridster.GridsterConfig;
-  clockItem:Gridster.GridsterItem = {cols: 5, rows: 3, y: 0, x: 0};
+  clockItem:Gridster.GridsterItem = {cols: 5, rows: 2, y: 0, x: 0};
   counterItem:Gridster.GridsterItem = {cols: 3, rows: 2, y: 0, x: 5};
   clockTimer:Subscription;
   counterTimer:Subscription;
