@@ -1,7 +1,11 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
-import { PluginView } from 'web-console-core';
-import { Domain, ApplicationsService, Application } from '@wa-motif-open-api/platform-service'
+import { PluginView, NGXLogger } from 'web-console-core';
+import { Domain, Application } from '@wa-motif-open-api/platform-service'
 import { ComboBoxComponent } from '@progress/kendo-angular-dropdowns';
+import { ApplicationsService, Service } from '@wa-motif-open-api/catalog-service';
+
+
+const LOG_TAG = '[CustomWebAdminModuleComponent]';
 
 
 @Component({
@@ -15,13 +19,13 @@ import { ComboBoxComponent } from '@progress/kendo-angular-dropdowns';
 export class CustomWebAdminModuleComponent implements OnInit {
 
   @ViewChild('applicationsCombo') _appComboBox: ComboBoxComponent;
-  //@ViewChild('domainSelector') domainSelector: DomainSelectorComboBoxComponent;
-  //@ViewChild('applicationSelector') applicationSelector: ApplicationSelectorComboBoxComponent;
 
   @Input() public selectedDomain: Domain;
-  public _selectedApplication: Application; // combo box selection
+  public _selectedApplication: Application;
 
-  constructor() { }
+  data : Array<Service>;
+
+  constructor(private logger: NGXLogger, private applicationService:ApplicationsService) { }
 
   ngOnInit() {
   }
@@ -44,7 +48,16 @@ export class CustomWebAdminModuleComponent implements OnInit {
    }
 
   private reloadData(){
-    //TODO!!
+    if (this.selectedDomain && this.selectedApplication) {
+      this.applicationService.getServiceList(this.selectedDomain.name, this.selectedApplication.name).subscribe( ( services: Array<Service> ) => {
+        this.logger.debug(LOG_TAG, 'getServiceCatalog services[' + this.selectedApplication.name + '@' + this.selectedDomain.name + ']:', services );
+        this.data = services;
+        }, ( error ) => {
+            this.logger.error(LOG_TAG, 'getServiceCatalog error:' , error);
+        });
+    } else {
+      this.data = [];
+    }
   }
 
 
