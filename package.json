@@ -73,7 +73,7 @@
     "file-saver": "^2.0.1",
     "install": "^0.12.2",
     "moment": "^2.24.0",
-    "motif-web-admin-core": "^0.0.26",
+    "motif-web-admin-core": "^0.0.27",
     "ng2-tooltip-directive": "^2.1.9",
     "ngx-clipboard": "^11.1.9",
     "ngx-color": "^2.0.6",
