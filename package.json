@@ -7,7 +7,13 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "buildlib:prod": "ng build --prod custom-web-admin-module",
+    "buildlib": "ng build custom-web-admin-module",
+    "buildlib:local": "npm run buildlib;npm run copy_assets;",
+    "copy_assets": "cp -rf ./projects/custom-web-admin-module/src/assets ./dist/custom-web-admin-module/assets/",
+    "packlib": "npm pack ./dist/custom-web-admin-module",
+    "distlib:local": "npm run buildlib:prod;npm run copy_assets;npm run packlib;"
   },
   "private": true,
   "dependencies": {

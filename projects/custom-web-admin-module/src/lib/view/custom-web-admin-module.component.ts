@@ -7,7 +7,7 @@ import { PluginView } from 'web-console-core';
   templateUrl: './custom-web-admin-module.component.html'
 })
 @PluginView('Plugins', {
-  iconName: 'wa-ico-plugins'
+  iconName: 'mymod-ico-fire'
 })
 export class CustomWebAdminModuleComponent implements OnInit {
 
