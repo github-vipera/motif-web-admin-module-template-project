@@ -13,8 +13,8 @@ const LOG_TAG = '[CustomWebAdminModuleComponent]';
   styleUrls: [ './custom-web-admin-module.component.scss' ],
   templateUrl: './custom-web-admin-module.component.html'
 })
-@PluginView('Plugins', {
-  iconName: 'wa-ico-plugins'
+@PluginView('My Custom Plugin', {
+  iconName: 'mymod-ico-fire'
 })
 export class CustomWebAdminModuleComponent implements OnInit {
 
