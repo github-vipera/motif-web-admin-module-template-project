@@ -14,6 +14,11 @@
           "options": {
             "tsConfig": "projects/custom-web-admin-module/tsconfig.lib.json",
             "project": "projects/custom-web-admin-module/ng-package.json"
+          },
+          "configurations": {
+            "production" : {
+              "project": "projects/custom-web-admin-module/ng-package.prod.json"
+            }
           }
         },
         "test": {
@@ -64,7 +69,8 @@
               "node_modules/@progress/kendo-theme-default/scss/all.scss",
               "node_modules/motif-web-admin-core/assets/style.css",
               "node_modules/motif-web-admin-core/assets/motif_webadmin_iconfont.css",
-              "projects/custom-module-test-app/src/styles.scss"
+              "projects/custom-module-test-app/src/styles.scss",
+              "dist/custom-web-admin-module/assets/styles.scss"
             ],
             "scripts": []
           },
