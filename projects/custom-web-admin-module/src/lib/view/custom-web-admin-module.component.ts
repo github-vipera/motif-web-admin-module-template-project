@@ -14,7 +14,14 @@ const LOG_TAG = '[CustomWebAdminModuleComponent]';
   templateUrl: './custom-web-admin-module.component.html'
 })
 @PluginView('My Custom Plugin', {
-  iconName: 'mymod-ico-fire'
+  iconName: 'mymod-ico-fire',
+    userData: {
+        acl: {
+            permissions: ["com.vipera.osgi.core.platform.api.rest.PlatformApi:READ:getDomains",
+                          "com.vipera.osgi.core.platform.api.rest.PlatformApi:READ:getApplications",
+                          "com.vipera.osgi.bss.catalog.api.rest.CatalogApi:READ:getServiceList"]
+        }
+    }
 })
 export class CustomWebAdminModuleComponent implements OnInit {
 

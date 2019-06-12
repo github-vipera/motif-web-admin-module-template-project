@@ -8,6 +8,7 @@ import { WCUIKitCoreModule,
 import { GridModule } from '@progress/kendo-angular-grid';
 import { LoggerModule } from 'ngx-logger';
 import { CommonsUIModule, CommonSelectorsModule } from 'motif-web-admin-core';
+import { MotifACLModule } from 'web-console-motif-acl';
 
 @NgModule({
   declarations: [CustomWebAdminModuleComponent],
@@ -20,7 +21,8 @@ import { CommonsUIModule, CommonSelectorsModule } from 'motif-web-admin-core';
     GridModule,
     LoggerModule,
     CommonsUIModule,
-    CommonSelectorsModule
+    CommonSelectorsModule,
+    MotifACLModule
   ],
   exports: [CustomWebAdminModuleComponent]
 })
